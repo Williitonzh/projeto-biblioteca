@@ -1,0 +1,10 @@
+SELECT
+    Leitor.nome AS leitor,
+    Livro.titulo AS livro,
+    Emprestimo.data_prevista_devolucao
+FROM Emprestimo
+JOIN Leitor
+    ON Emprestimo.id_leitor = Leitor.id_leitor
+JOIN Livro
+    ON Emprestimo.id_livro = Livro.id_livro
+WHERE Emprestimo.data_devolucao IS NULL;
