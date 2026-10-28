@@ -1,0 +1,10 @@
+CREATE TABLE Emprestimo(
+id_emprestimo INTEGER PRIMARY KEY,
+id_livro INTEGER,
+id_leitor INTEGER,
+data_emprestimo TEXT not null,
+data_prevista_devolucao TEXT GENERATED ALWAYS AS (date(data_emprestimo, '+7 days')) virtual,
+data_devolucao TEXT,
+FOREIGN KEY (id_livro) REFERENCES livro(id_livro),
+FOREIGN KEY (id_leitor) REFERENCES Leitor(id_leitor)
+);
