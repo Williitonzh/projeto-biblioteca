@@ -1,0 +1,16 @@
+INSERT INTO Leitor (id_leitor, nome, email, tipo, data_cadastro) VALUES
+(1, 'Ana Silva', 'ana.silva@email.com', 'Aluno', '2026-01-10'),
+(2, 'Bruno Santos', 'bruno.santos@email.com', 'Aluno', '2026-01-12'),
+(3, 'Carla Oliveira', 'carla.oliveira@email.com', 'Aluno', '2026-02-01'),
+(4, 'Daniel Costa', 'daniel.costa@email.com', 'Aluno', '2026-02-15'),
+(5, 'Eduarda Lima', 'eduarda.lima@email.com', 'Aluno', '2026-03-05'),
+(6, 'Felipe Souza', 'felipe.souza@email.com', 'Professor', '2026-01-08'),
+(7, 'Gabriela Rocha', 'gabriela.rocha@email.com', 'Professor', '2026-01-20'),
+(8, 'Henrique Alves', 'henrique.alves@email.com', 'Professor', '2026-02-10'),
+(9, 'Isabela Martins', 'isabela.martins@email.com', 'Professor', '2026-03-01'),
+(10, 'Joao Pereira', 'joao.pereira@email.com', 'Professor', '2026-03-12'),
+(11, 'Karen Ribeiro', 'karen.ribeiro@email.com', 'Funcionario', '2026-01-05'),
+(12, 'Lucas Ferreira', 'lucas.ferreira@email.com', 'Funcionario', '2026-01-25'),
+(13, 'Mariana Gomes', 'mariana.gomes@email.com', 'Funcionario', '2026-02-18'),
+(14, 'Nicolas Barbosa', 'nicolas.barbosa@email.com', 'Funcionario', '2026-03-10'),
+(15, 'Olivia Mendes', 'olivia.mendes@email.com', 'Funcionario', '2026-04-02');
