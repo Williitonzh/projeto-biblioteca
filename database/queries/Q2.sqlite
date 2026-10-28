@@ -1,0 +1,16 @@
+SELECT
+    Leitor.nome AS leitor,
+    Livro.titulo AS livro,
+    Emprestimo.data_prevista_devolucao,
+    CAST(
+        julianday('2026-11-16') -
+        julianday(Emprestimo.data_prevista_devolucao)
+        AS INTEGER
+    ) AS dias_atraso
+FROM Emprestimo
+JOIN Leitor
+    ON Emprestimo.id_leitor = Leitor.id_leitor
+JOIN Livro
+    ON Emprestimo.id_livro = Livro.id_livro
+WHERE Emprestimo.data_devolucao IS NULL
+  AND Emprestimo.data_prevista_devolucao < '2026-11-16';
