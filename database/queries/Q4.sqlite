@@ -1,0 +1,12 @@
+SELECT
+    Categoria.nome AS categoria,
+    COUNT(Emprestimo.id_emprestimo) AS total_emprestimos
+FROM Categoria
+LEFT JOIN Livro
+    ON Categoria.id_categoria = Livro.id_categoria
+LEFT JOIN Emprestimo
+    ON Livro.id_livro = Emprestimo.id_livro
+GROUP BY
+    Categoria.id_categoria,
+    Categoria.nome
+ORDER BY Categoria.nome;
