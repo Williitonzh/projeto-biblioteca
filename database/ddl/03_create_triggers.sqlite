@@ -1,0 +1,21 @@
+create TRIGGER trg_emprestimo 
+BEFORE INSERT on Emprestimo
+When ( select count(*) from Emprestimo
+    WHERE id_leitor = NEW.id_leitor
+) >= 3
+Begin 
+	SELECT RAISE(ABORT, 'Limite de emprestimos atingido');
+END;
+
+create TRIGGER trg_exemplares
+BEFORE INSERT on Emprestimo
+When ( select count(*) from Emprestimo
+    WHERE id_livro = NEW.id_livro AND data_devolucao IS NULL
+) >= (
+    SELECT qtd_exemplares
+    FROM Livro
+    WHERE id_livro = NEW.id_livro
+)
+Begin 
+	SELECT RAISE(ABORT, 'Sem exemplares nesse momento');
+END;
