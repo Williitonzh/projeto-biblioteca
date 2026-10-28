@@ -1,0 +1,7 @@
+SELECT
+    Livro.id_livro,
+    Livro.titulo
+FROM Livro
+LEFT JOIN Emprestimo
+    ON Livro.id_livro = Emprestimo.id_livro
+WHERE Emprestimo.id_emprestimo IS NULL;
